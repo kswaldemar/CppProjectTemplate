@@ -13,3 +13,10 @@ get_directory_property(hasParent PARENT_DIRECTORY)
 if(hasParent)
     set(PROJECT_${PROJECT_NAME} true PARENT_SCOPE)
 endif()
+
+macro(add_cpack_target)
+    ADD_CUSTOM_TARGET(package${PROJECT_NAME}
+        COMMAND cpack --config ${CPACK_OUTPUT_CONFIG_FILE} # Generate package files with accordance to subproject config
+        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+    )
+endmacro(add_cpack_target)

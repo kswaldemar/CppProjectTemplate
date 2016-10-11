@@ -15,5 +15,10 @@ enable_testing() # needed on top-level CMakeLists.txt
 add_custom_target(doc) # DEPENDS docProjA docProjB) Note: with CMake 3.X the DEPENDS would work
 ADD_DEPENDENCIES(doc docProjA docProjB)
 
+# Target packages definition
+# Default CPack doesn't suit for us, because we want several packages with one command
+add_custom_target(packages)
+add_dependencies(packages packageProjA packageProjB)
+
 add_subdirectory(ProjA)
 add_subdirectory(ProjB)

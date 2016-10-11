@@ -78,5 +78,9 @@ set(CPACK_RPM_COMPONENT_INSTALL ON)   # necessary even if CPACK_COMPONENT_INSTAL
 # _____________________________________________________________________________
 set(CPACK_OSX_PACKAGE_VERSION "10.5")
 
+set(CPACK_OUTPUT_CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}CpackConfig.cmake)
+set(CPACK_SOURCE_OUTPUT_CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}CpackSourceConfig.cmake)
+set(CPACK_INSTALL_CMAKE_PROJECTS "${CMAKE_CURRENT_BINARY_DIR};${PROJECT_NAME};ALL;/")
+
 include (InstallRequiredSystemLibraries)
 include (CPack)

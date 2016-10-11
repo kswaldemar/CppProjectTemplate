@@ -86,7 +86,7 @@ add_subdirectory(test)
 # _____________________________________________________________________________
 
 include(CPackConfig)
-
+add_cpack_target()
 #
 # CMAKE PACKAGING (for other CMake projects to use this one easily)
 # _____________________________________________________________________________
